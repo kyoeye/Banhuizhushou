@@ -1,0 +1,45 @@
+﻿<Page
+    x:Class="Banhuizhushou.B_PAGE.SettingPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:Banhuizhushou.B_PAGE"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Border Name="BlurBorder" />
+        <Hub Header="设置">
+            <HubSection>
+                <DataTemplate>
+
+                    <Grid>
+                        <StackPanel Margin="10">
+                            <ToggleSwitch
+                                Margin="5"
+                                FontSize="20"
+                                Header="关闭背景模糊" />
+                            <ToggleSwitch
+                                Margin="5"
+                                FontSize="20"
+                                Header="记录图片打开历史" />
+                            <ToggleSwitch
+                                Margin="5"
+                                FontSize="20"
+                                Header="记录文本打开历史" />
+                            <ToggleSwitch
+                                Margin="5"
+                                FontSize="20"
+                                Header="添加图片后总是直接打开" />
+                            <ToggleSwitch
+                                Margin="5"
+                                FontSize="20"
+                                Header="置顶文本总是自动上锁" />
+                            <Button Margin="5,0,5,5" Content="清除剪贴板识别缓存" />
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </HubSection>
+        </Hub>
+    </Grid>
+</Page>
