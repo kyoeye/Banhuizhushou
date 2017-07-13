@@ -48,21 +48,22 @@ namespace Banhuizhushou.B_PAGE
 
             MyScrollviewer.IsZoomInertiaEnabled = false;
         }
-        string imgpath;
+        //string imgpath;
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            imgpath = (string )  e.Parameter;
-            showpathimg(imgpath);
+             //imgpath = (string )  e.Parameter;
+           var  Imgsf = (StorageFile )  e.Parameter;
+            showpathimg(Imgsf);
             var cc = ShowImge.Height;
             ShowImge.Height = RootGrid.Height;
           
         }
-        private async void showpathimg(string a)
+        private async void showpathimg(StorageFile a)
         {
-            var filepath = await StorageFile.GetFileFromPathAsync(a);
+            //var filepath = await StorageFile.GetFileFromPathAsync(a.Path);
             BitmapImage bi = new BitmapImage();
-            await bi.SetSourceAsync(await filepath.OpenAsync(FileAccessMode.Read));
+            await bi.SetSourceAsync(await a.OpenAsync(FileAccessMode.Read));
             ShowImge.Source = bi;
         }
 

@@ -101,13 +101,13 @@ namespace Banhuizhushou
         }
         int compactViewId;
 
-        private async void ShowCompactView(string path)
+        private async void ShowCompactView(StorageFile sf)
         {
             await CoreApplication.CreateNewView().Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
             {
                 var frame = new Frame();
                 compactViewId = ApplicationView.GetForCurrentView().Id;
-                frame.Navigate(typeof(PicinPic), path);
+                frame.Navigate(typeof(PicinPic), sf);
                 Window.Current.Content = frame;
                 Window.Current.Activate();
                 ApplicationView.GetForCurrentView().Title = "CompactOverlay Window";
