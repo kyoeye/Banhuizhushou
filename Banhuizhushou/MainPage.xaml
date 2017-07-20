@@ -683,6 +683,7 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
     </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -725,12 +726,18 @@
                 Foreground="Black"
                 Text="置顶助手" />
             <StackPanel Margin="5" Orientation="Horizontal">
-                <AppBarButton Height="50">
+                <AppBarButton
+                    Name="PicButton"
+                    Height="50"
+                    Click="PicButton_Click">
                     <AppBarButton.Icon>
                         <FontIcon FontFamily="Segoe UI" Glyph="图片" />
                     </AppBarButton.Icon>
                 </AppBarButton>
-                <AppBarButton Height="50">
+                <AppBarButton
+                    Name="TextButton"
+                    Height="50"
+                    Click="TextButton_Click">
                     <AppBarButton.Icon>
                         <FontIcon FontFamily="Segoe UI" Glyph="文本" />
                     </AppBarButton.Icon>
@@ -748,11 +755,13 @@
             Click="Settingbutton_Click"
             Icon="Setting" />
         <Pivot
+            Name="MyPivot"
             Grid.Row="1"
             Padding="0"
+            SelectionChanged="MyPivot_SelectionChanged"
             Style="{StaticResource PivotStyle1}">
             <PivotItem
-                Name="Pivot_"
+                Name="Pivot_0"
                 Margin="0"
                 Header="{x:Null}">
                 <StackPanel Name="ListGrid" Grid.Row="1">
@@ -769,6 +778,7 @@
                         VerticalAlignment="Top"
                         ItemsSource="{x:Bind ImgitemOb}"
                         Style="{StaticResource GridViewStyle1}">
+
                         <GridView.ItemTemplate>
                             <DataTemplate x:DataType="data:Imgitem">
                                 <StackPanel
@@ -814,8 +824,29 @@
                             Name="Mytextbox"
                             Height="100"
                             Margin="10,0,10,10"
-                            PlaceholderText="苟利国家生死以" />
-                        <ListView />
+                            AcceptsReturn="True"
+                            BorderThickness="0"
+                            PlaceholderText="苟利国家生死以"
+                            TextWrapping="Wrap" />
+                        <ItemsControl
+                            Height="auto"
+                            Margin="10"
+                            Background="#FFF3F3F3"
+                            ItemsSource="{x:Bind TextitemOb}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate x:DataType="data:TextItem">
+                                    <ListViewItem Name="TextListview" Tapped="TextListview_Tapped">
+                                        <StackPanel>
+                                            <TextBlock
+                                                Margin="3"
+                                                FontSize="15"
+                                                Text="{x:Bind TextContent}"
+                                                TextWrapping="Wrap" />
+                                        </StackPanel>
+                                    </ListViewItem>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
                     </StackPanel>
 
                 </ScrollViewer>

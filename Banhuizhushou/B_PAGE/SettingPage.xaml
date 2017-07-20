@@ -8,38 +8,103 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Border Name="BlurBorder" />
-        <Hub Header="设置">
-            <HubSection>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Border Name="BlurBorder" Grid.RowSpan="2" />
+        <Hub Grid.Row="1" Header="设置">
+            <HubSection Header="通用设置">
                 <DataTemplate>
-
                     <Grid>
                         <StackPanel Margin="10">
+                            <ToggleSwitch FontSize="18" Header="直接置顶" />
+                            <TextBlock
+                                Margin="0,0,0,5"
+                                FontSize="12"
+                                Foreground="#FF868686"
+                                Text="（导入图片后将直接打开置顶窗口而不用手动选择）"
+                                TextWrapping="Wrap" />
                             <ToggleSwitch
                                 Margin="5"
-                                FontSize="20"
+                                FontSize="18"
                                 Header="关闭背景模糊" />
                             <ToggleSwitch
                                 Margin="5"
-                                FontSize="20"
+                                FontSize="18"
                                 Header="记录图片打开历史" />
                             <ToggleSwitch
                                 Margin="5"
-                                FontSize="20"
+                                FontSize="18"
                                 Header="记录文本打开历史" />
                             <ToggleSwitch
                                 Margin="5"
-                                FontSize="20"
+                                FontSize="18"
                                 Header="添加图片后总是直接打开" />
                             <ToggleSwitch
                                 Margin="5"
-                                FontSize="20"
+                                FontSize="18"
                                 Header="置顶文本总是自动上锁" />
                             <Button Margin="5,0,5,5" Content="清除剪贴板识别缓存" />
                         </StackPanel>
                     </Grid>
                 </DataTemplate>
             </HubSection>
+            <HubSection Header="关于">
+                <DataTemplate>
+                    <StackPanel>
+                        <StackPanel Margin="10">
+                            <TextBlock Margin="5" Text="瞎扯淡" />
+                            <TextBox
+                                Width="300"
+                                Margin="0,0,0,5"
+                                BorderThickness="0"
+                                FontSize="12"
+                                Foreground="#FF868686"
+                                Text="       某一天，当吾辈自以为已完成任务可以下班之际，刚把啊逗逼全家桶关掉之时，老大突然从某个角落蹦出来，然后开始长篇大论的修改意见，手忙脚乱的吾辈翻出纸笔，老大开始写出了一行狗爬一样的改动之处……画画遇到瓶颈，看到大佬们画的很好想模仿一下可是却找不到无广告没bug少占用少还能保存置顶历史的软件…… （吾辈受不了了啊）"
+                                TextWrapping="Wrap" />
+                        </StackPanel>
+                        <StackPanel Margin="10">
+                            <TextBlock Margin="5" Text="联系作者" />
+                            <TextBlock
+                                Margin="0,0,0,5"
+                                FontSize="12"
+                                Foreground="#FF868686"
+                                Text="（吾辈很需要您宝贵的建议，来吧，放开来吧）"
+                                TextWrapping="Wrap" />
+                            <Button Margin="5,0,5,5" Content="邮箱：ghhhgvchbvc55667@outlook.com" />
+                            <Button Margin="5,0,5,5" Content="QQ：1429293578" />
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </HubSection>
+
         </Hub>
+
+        <Grid Height="32" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <AppBarButton
+                Name="GobackButton"
+                Width="50"
+                Height="32"
+                Click="GobackButton_Click"
+                Visibility="Visible">
+                <TextBlock
+                    Margin="16,-9,15,9"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontFamily="Segoe MDL2 Assets"
+                    Foreground="Black"
+                    Text="&#xE096;" />
+            </AppBarButton>
+            <Border
+                Name="Mytitle"
+                Grid.Column="1"
+                Background="White"
+                Opacity="0.1" />
+        </Grid>
     </Grid>
 </Page>

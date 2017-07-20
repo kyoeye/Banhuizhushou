@@ -25,6 +25,13 @@ namespace Banhuizhushou.B_PAGE
         public SettingPage()
         {
             this.InitializeComponent();
+            Window.Current.SetTitleBar(Mytitle);
+        }
+
+        private void GobackButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (Frame.CanGoBack)
+                Frame.GoBack();
         }
     }
 }

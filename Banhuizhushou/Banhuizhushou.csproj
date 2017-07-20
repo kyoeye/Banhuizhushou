@@ -96,12 +96,16 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="B_CLASS\Imgitem.cs" />
+    <Compile Include="B_CLASS\TextItem.cs" />
     <Compile Include="B_CLASS\UiBlur.cs" />
     <Compile Include="B_PAGE\PicinPic.xaml.cs">
       <DependentUpon>PicinPic.xaml</DependentUpon>
     </Compile>
     <Compile Include="B_PAGE\SettingPage.xaml.cs">
       <DependentUpon>SettingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="B_PAGE\TextinText.xaml.cs">
+      <DependentUpon>TextinText.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -134,6 +138,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="B_PAGE\SettingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="B_PAGE\TextinText.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

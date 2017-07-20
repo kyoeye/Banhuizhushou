@@ -12,7 +12,12 @@
         <ScrollViewer
             Name="MyScrollviewer"
             HorizontalScrollBarVisibility="Auto"
+            HorizontalScrollMode="Enabled"
+            HorizontalSnapPointsType="OptionalSingle"
+            IsHorizontalRailEnabled="True"
             IsZoomInertiaEnabled="False"
+            VerticalScrollBarVisibility="Visible"
+            VerticalSnapPointsType="OptionalSingle"
             ZoomMode="Enabled">
             <Image
                 Name="ShowImge"
